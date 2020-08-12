@@ -51,6 +51,13 @@ PATH
       rails
 
 PATH
+  remote: plugins/printer
+  specs:
+    foodsoft_printer (0.0.1)
+      deface (~> 1.0)
+      rails
+
+PATH
   remote: plugins/wiki
   specs:
     foodsoft_wiki (0.0.1)
@@ -592,6 +599,7 @@ DEPENDENCIES
   foodsoft_links!
   foodsoft_messages!
   foodsoft_polls!
+  foodsoft_printer!
   foodsoft_wiki!
   gaffe
   haml

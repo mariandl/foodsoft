@@ -167,6 +167,9 @@ Rails.application.routes.draw do
       end
 
       resources :invoices do
+        collection do
+          post :pay
+        end
         get :attachment
         get :form_on_supplier_id_change, on: :collection
         get :unpaid, on: :collection
@@ -212,6 +215,13 @@ Rails.application.routes.draw do
         end
 
         resources :bank_transactions, as: :transactions
+      end
+
+      resources :bank_gateways do
+        member do
+          get :callback
+          get :import
+        end
       end
 
       resources :bank_transactions, only: [:index, :show]
